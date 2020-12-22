@@ -7,7 +7,10 @@ export const Header = () => {
       "theme-night" : true
     }
   ])
-  return <nav className={topclass}>
 
-  </nav>
+  return <header>
+    <nav className={topclass}>
+
+    </nav>
+  </header>
 }

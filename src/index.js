@@ -1,15 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import 'normalize.css'
-import './index.css'
-import { Header } from './components/headers'
+import 'rsuite/lib/styles/index.less'
+import { Main } from './view/main/index'
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
+
+const Router = () => {
+  return <HashRouter>
+    <Switch>
+      <Route exact path="/" component={Main} />
+      {/* <Route exact path="/home"  /> */}
+      {/* <Route exact path="/" /> */}
+    </Switch>
+  </HashRouter>
+}
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Header />
-  </React.StrictMode>,
+  <Router />,
   document.getElementById('root')
 );
 
