@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '../../components/headers/index'
 
-
 export const Main = () => {
   return  <div>
     {/* 菜单 */}

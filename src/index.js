@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import 'normalize.css'
 import 'rsuite/lib/styles/index.less'
+import './styles/import.less'
 import { Main } from './view/main/index'
 
 import reportWebVitals from './reportWebVitals'
@@ -19,7 +19,9 @@ const Router = () => {
 
 
 ReactDOM.render(
-  <Router />,
+  <div className="page">
+    <Router />
+  </div>,
   document.getElementById('root')
 );
 
