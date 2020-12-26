@@ -1,27 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Route, Switch } from 'react-router-dom'
 import 'rsuite/lib/styles/index.less'
 import './styles/import.less'
-import { Main } from './view/main/index'
+import { RouterConfig } from './routers/index'
 
 import reportWebVitals from './reportWebVitals'
 
-const Router = () => {
-  return <HashRouter>
-    <Switch>
-      <Route exact path="/" component={Main} />
-      {/* <Route exact path="/home"  /> */}
-      {/* <Route exact path="/" /> */}
-    </Switch>
-  </HashRouter>
-}
-
 
 ReactDOM.render(
-  <div className="page">
-    <Router />
-  </div>,
+  <RouterConfig />,
   document.getElementById('root')
 );
 

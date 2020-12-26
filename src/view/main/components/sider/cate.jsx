@@ -7,8 +7,8 @@ export const Cate = (props) => {
     <div class="content-inner">
       <ul className="category-list">
       {data.map(item => <li className="category-list-item">
-        <a></a>
-        <span></span>
+        <a className="category-list-link" href="">{item.name}</a>
+        <span className="category-list-cnt">{item.cnt}</span>
       </li>)}
       </ul>
     </div>

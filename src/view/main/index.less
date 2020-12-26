@@ -1,0 +1,22 @@
+@import '../../styles/import.less';
+
+.main-container {
+  padding-top: 2 * @padding;
+  padding-bottom: 2 * @padding;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  .xs-screen({
+    max-width: 480px;
+  });
+  .sm-screen({
+    max-width: 740px;
+  });
+  .md-screen({
+    max-width: 920px;
+  });
+  .lg-screen({
+    max-width: 1200px;
+  });
+
+}
