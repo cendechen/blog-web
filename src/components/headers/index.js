@@ -13,8 +13,8 @@ export const Header = () => {
     }
   ])
 
-  return <header className="top">
-    <div className="top-container">
+  return <header className="header">
+    <div className="header-container">
       <nav className={topclass}>
         {/* logo */}
         <div className="nav-left">

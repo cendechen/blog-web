@@ -1,4 +1,6 @@
-.top {
+@import '../../styles/import.less';
+
+.header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -8,9 +10,21 @@
   background: #fff;
 
   &-container {
-    max-width: 1344px;
+    max-width: 90%;
     margin: 0 auto;
     position: relative;
+    .xs-screen({
+      max-width: 480px;
+    });
+    .sm-screen({
+      max-width: 740px;
+    });
+    .md-screen({
+      max-width: 920px;
+    });
+    .lg-screen({
+      max-width: 1200px;
+    });
   }
 }
 

@@ -1,0 +1,80 @@
+.sider {
+  background: #fff;
+  max-width: 280px;
+  min-width: 230px;
+}
+
+.top-line {
+  border-top: 2px solid #f1f1f1;
+}
+.right-line {
+  border-right: 2px solid #f1f1f1;
+}
+.portrait {
+  padding: 15px;
+  &-hd {
+    text-align: center;
+    .avatar {
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+    }
+  }
+  &-bd {
+    text-align: center;
+    strong {
+      color: #363636;
+    }
+    .sub-title {
+      color: darkgray;
+    }
+    .map-marker {
+      color: gray;
+    }
+  }
+}
+
+.chat-container {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  flex-wrap: wrap;
+  li {
+    list-style: none;
+  }
+}
+.chat-sms {
+  color: black;
+}
+
+.title-center {
+  text-align: center;
+}
+
+.content-box {
+  padding: 0 15px;
+}
+.content-inner {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.detail {
+  display: flex;
+  height: 60px;
+  &-item {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tag-item {
+  display: inline-block;
+  color: #000;
+  border: 1px solid gray;
+  margin: 4px 2px;
+  padding: 0 4px;
+  border-radius: 6px;
+}

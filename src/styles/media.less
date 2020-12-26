@@ -1,16 +1,30 @@
+@wide-screen-up: ~'(min-width: 1200px)';
+@desktop-up: ~'(min-width: 960px)';
+@tablet-up: ~'(min-width: 768px)';
+@phone-up: ~'(min-width: 480px)';
+@small-phone-up: ~'(min-width: 320px)';
 
-@media screen {
-  // 最小屏幕
-  @media (min-width: 480px) {
+// 处理mixin方法
 
+.min(@breakpoint, @ruleset) {
+  @media screen {
+    @media @breakpoint {
+      @ruleset();
+    }
   }
-  @media (min-width: 768px) {
+}
 
-  }
-  @media (min-width: 960px) {
+.xs-screen(@ruleset) {
+  .min(@phone-up, @ruleset);
+}
 
-  }
-  @media (min-width: 1200px) {
-
-  }
+.sm-screen (@ruleset) {
+  .min(@tablet-up, @ruleset);
+}
+.md-screen (@ruleset) {
+  .min(@desktop-up, @ruleset);
+}
+// 大屏幕
+.lg-screen(@ruleset) {
+  .min(@wide-screen-up, @ruleset);
 }
