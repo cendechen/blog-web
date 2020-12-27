@@ -1,0 +1,36 @@
+@import './media.mixin.less';
+
+.loop(@i, @screen) when (@i > 0) {
+  .loop(@i - 1, @screen);
+  .col-@{screen}-@{i} {
+    width: ( @i / @grid-columns) * 100%;
+  }
+}
+
+.loop-row(@i) when (@i > 0) {
+  .loop-row(@i - 1);
+  .col-@{i} {
+    width: ( @i / @grid-columns) * 100%;
+  }
+}
+// 没有响应式的数据
+.loop-row(@grid-columns);
+// 生成响应式的布局
+.sm(.loop(@grid-columns, sm));
+.md(.loop(@grid-columns, md));
+.lg(.loop(@grid-columns, lg));
+.xl(.loop(@grid-columns, xl));
+
+// 生成grid
+.gutters (@gutter-width: @grid-gutter-width) {
+  margin-left: -1 * @gutter-width;
+  margin-right: -1 * @gutter-width;
+  & >[class*="col-"] {
+    padding-left: @gutter-width;
+    padding-right: @gutter-width;
+  }
+}
+
+.gutter {
+  .gutters();
+}

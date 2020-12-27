@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'rsuite/lib/styles/index.less'
-import './styles/import.less'
+import './styles/index.less'
 import { RouterConfig } from './routers/index'
 
 import reportWebVitals from './reportWebVitals'

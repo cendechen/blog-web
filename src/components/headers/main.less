@@ -1,4 +1,4 @@
-@import '../../styles/import.less';
+@import '../../styles/index.less';
 
 .header {
   position: fixed;
@@ -13,16 +13,16 @@
     max-width: 90%;
     margin: 0 auto;
     position: relative;
-    .xs-screen({
+    .sm({
       max-width: 480px;
     });
-    .sm-screen({
+    .md({
       max-width: 740px;
     });
-    .md-screen({
+    .lg({
       max-width: 920px;
     });
-    .lg-screen({
+    .xl({
       max-width: 1200px;
     });
   }

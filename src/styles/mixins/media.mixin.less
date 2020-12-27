@@ -1,0 +1,80 @@
+@import './base.mixin.less';
+
+@xl-width: 1280px;
+@lg-width: 1012px;
+@md-width: 768px;
+@sm-width: 544px;
+@xs-width: 0px;
+
+@xl-up: ~'(min-width: 1280px)';
+@lg-up: ~'(min-width: 1012px)';
+@md-up: ~'(min-width: 768px)';
+@sm-up: ~'(min-width: 544px)';
+@xs-up: ~'(min-width: 0px)';
+
+// 屏幕列表
+@screen: xs, sm, md, lg, xl;
+/*
+
+|0px ->
+        |544px ->
+        |sm
+                  |768px ->
+                  |md
+                            |1012px ->
+                            |lg
+                                      |1280px ->
+                                      |xl
+|col-12 ------->  | col-md-8 -------->| col-xl-4 ->
+
+*/
+
+// 处理mixin方法
+.min(@breakpoint, @ruleset) {
+  @media screen {
+    @media @breakpoint {
+      @ruleset();
+    }
+  }
+}
+
+// 小屏幕
+.sm(@ruleset) {
+  .min(@sm-up, @ruleset);
+}
+// 中等屏幕
+.md (@ruleset) {
+  .min(@md-up, @ruleset);
+}
+// 大屏幕
+.lg (@ruleset) {
+  .min(@lg-up, @ruleset);
+}
+// 超大屏幕
+.xl(@ruleset) {
+  .min(@xl-up, @ruleset);
+}
+
+// 容器设置
+.container {
+  &-xs {
+    max-width: 320px;
+    .margin-auto;
+  }
+  &-sm {
+    max-width: @sm-width;
+    .margin-auto;
+  }
+  &-md {
+    max-width: @md-width;
+    .margin-auto;
+  }
+  &-lg {
+    max-width: @lg-width;
+    .margin-auto;
+  }
+  &-xl {
+    max-width: @xl-width;
+    .margin-auto;
+  }
+}
