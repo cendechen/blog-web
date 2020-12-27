@@ -8,9 +8,8 @@ const ChatList = [{
 }]
 
 export const Chat = () => {
-
-  return <div className="top-line">
-    <ul className="chat-container">
+  return <div className="border-t-2 border-solid border-gray-100">
+    <ul className="flex justify-center flex-wrap px-4 py-4">
       {ChatList.map(item => {
         return <li key={item.href}>
           <a target="_blank" href={item.href} className="chat-sms">
