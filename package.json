@@ -19,7 +19,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:css": "postcss src/styles/main.css -o src/styles/index.css",
+    "build:css": "cross-env NODE_ENV=production postcss src/styles/main.css -o src/styles/index.css",
     "watch:css": "postcss src/styles/main.css -o src/styles/index.css -w",
     "start": "npm-run-all -p watch:css start-js",
     "start-js": "react-app-rewired start",
@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
