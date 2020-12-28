@@ -3,7 +3,7 @@ import { Sider } from './components/sider'
 import './index.less'
 
 export const Main = () => {
-  return  <div className="main-container is-flex">
+  return  <div className="is-flex mx-auto container py-4">
     <Sider />
   </div>
 }

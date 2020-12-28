@@ -1,42 +1,4 @@
-@import '../../styles/index.less';
 
 .header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 2;
-  border-top: 2px solid black;
-  border-bottom: 1px solid #f1f1f1;
-  background: #fff;
-
-  &-container {
-    max-width: 90%;
-    margin: 0 auto;
-    position: relative;
-    .sm({
-      max-width: 480px;
-    });
-    .md({
-      max-width: 740px;
-    });
-    .lg({
-      max-width: 920px;
-    });
-    .xl({
-      max-width: 1200px;
-    });
-  }
-}
-
-.nav {
-  display: flex;
-  position: relative;
-  z-index: 10;
-  height: 3.25rem;
-  align-items: stretch;
-  justify-content: space-between;
-  &-right {
-    display: flex;
-    align-items: center;
-  }
+  @apply fixed w-full top-0 border-solid border-t-2 border-gray-800 bg-white dark:bg-gray-800;
 }

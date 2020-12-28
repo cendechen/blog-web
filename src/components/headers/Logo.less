@@ -1,32 +1,34 @@
-.logo {
-  &-container {
-    font-weight: bold;
-    color: #7a7a7a;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.5;
-    padding: 0.5rem 0.75rem;
+@keyframes flip {
+  from {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
   }
-  position: relative;
-  color: #fff;
-  font-size: 20px;
-  padding: 0 5px;
-  border-radius: 4px;
-  margin-right: 5px;
-  background-image: linear-gradient(to right, red, orange);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  &::after {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: black;
-    z-index: -1;
-    border-radius: 4px;
+
+  40% {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
   }
+
+  50% {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: ease-in;
+  }
+}
+.animate-fade-in {
+  backface-visibility: visible;
+  animation-name: flip;
+  stroke: red;
 }

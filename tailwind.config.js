@@ -6,9 +6,16 @@ module.exports = {
     './src/**/*.tsx',
     './public/index.html'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
+    // 数据
+    screens: {
+      'sm': '544px',
+      'md': '768px',
+      'lg': '1012px',
+      'xl': '1280px'
+    }
   },
   variants: {
     extend: {},
