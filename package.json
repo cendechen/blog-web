@@ -20,14 +20,10 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:css": "cross-env NODE_ENV=production postcss src/styles/main.css -o src/styles/index.css",
-    "watch:css": "postcss src/styles/main.css -o src/styles/index.css -w",
-    "start-dev": "npm-run-all -p watch:css start",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject",
-    "prebuild": "npm run build:css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
