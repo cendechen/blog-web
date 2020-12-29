@@ -8,7 +8,8 @@ import { Archives } from './archives'
 
 import './index.less'
 
-export const Sider = () => {
+export const Sider = (props) => {
+
   const cate = [{
     name: '文章',
     cnt: 1
@@ -16,7 +17,8 @@ export const Sider = () => {
     name: '文章',
     cnt: 1
   }]
-  return <div className="sider">
+  
+  return <div className="w-1/5 bg-white hidden md:block">
     <Portrait />
     <Chat />
     <Detail />
