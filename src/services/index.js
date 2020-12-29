@@ -19,7 +19,7 @@ export const useObervableApi = (params) => {
         const source$ = ajax(params).pipe(
           map(res => res),
           take(1),
-          catchError(error => of({ error: true, message: `Error ${response.status}` }))
+          catchError(error => of({ error: true, message: `Error ${error.status}` }))
         )
         subscription = source$.subscribe(res => setResponse(res.response))
       }
