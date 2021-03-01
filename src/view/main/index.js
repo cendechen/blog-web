@@ -8,7 +8,6 @@ export const Main = () => {
   const data = useObervableApi({
     url: '/api/getList'
   })
-  console.log(data)
   return  <div className="flex mx-auto container py-4">
     <Sider />
     <AricleList />
