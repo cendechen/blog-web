@@ -12,6 +12,7 @@ export const RouterConfig = () => {
     <Header />
     <Switch>
       <Route exact path="/" component={Main} />
+      <Route exact path="/demo" component={Main} />
       {/* <Route exact path="/home"  /> */}
       {/* <Route exact path="/" /> */}
     </Switch>
