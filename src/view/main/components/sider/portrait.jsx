@@ -14,7 +14,7 @@ export const Portrait = () => {
       <h3><strong>陈俊林</strong></h3>
       <div className="text-gray-400">工欲善其事，必先利其器</div>
       <div className="text-gray-400">
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noreferrer">
           <Icon icon="icon-address" size="xl" />中国·成都
         </a>
         </div>
