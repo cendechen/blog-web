@@ -7,7 +7,7 @@ const ChatList = [{
 }]
 
 export const Chat = () => {
-  return <div className="border-t-2 border-solid border-gray-100">
+  return <div className="chat-line">
     <ul className="flex justify-center flex-wrap px-4 py-4">
       {ChatList.map(item => {
         return <li key={item.href}>

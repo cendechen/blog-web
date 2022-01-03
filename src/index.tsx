@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Routers } from './routers/index'
+import 'antd/dist/antd.dark.less';
 import './styles/index.less'
-import { RouterConfig } from './routers/index'
 
 import reportWebVitals from './reportWebVitals'
 
 
 ReactDOM.render(
-  <RouterConfig />,
+  <Routers />,
   document.getElementById('root')
 );
 

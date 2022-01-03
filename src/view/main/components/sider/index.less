@@ -3,10 +3,6 @@
   @apply border-t-2 border-solid border-gray-100;
 }
 
-.tag-item {
-  @apply inline-block text-gray-900 border-solid border border-gray-900 my-2 mx-1 py-1 px-2 rounded-sm;
-}
-
 .category-list, .archive-list {
   list-style: none;
   &-item {
@@ -23,5 +19,52 @@
     border-radius: 4px;
     color: #fff;
     background-color: gray;
+  }
+}
+
+
+.slider {
+  width: 260px;
+  border-right: 1px solid #272a3a;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  background-color: #151728;
+  overflow: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.protait {
+  .name {
+    color: #fff;
+  }
+  color: #9c9cab;
+}
+
+.chat-line {
+  border-top: 1px solid #272a3a;
+  .chat-sms {
+    color: #fff;
+  }
+}
+
+.sumary {
+  border-top: 1px solid #272a3a;
+  color: #9c9cab;
+}
+
+.cate-tags {
+  border-top: 1px solid #272a3a;
+  color: #9c9cab;
+  &-con {
+    padding: 20px;
+  }
+  .tag-item {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #272a3a;
   }
 }

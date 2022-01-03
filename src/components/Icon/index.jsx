@@ -1,14 +1,13 @@
 import React from 'react'
 import { isNumber } from 'lodash-es'
+
 export const Icon = (props) => {
-  const { icon, size = 'base' } =  props
-  var textSize = size === 'base' ? 'text-base' : size === 'lg' ? 'text-lg' : 'text-xl'
+  const { icon, size = 30 } =  props
   var style = {}
   if (isNumber(size)) {
-    textSize = ''
     style = {
-      'font-size': `${size}px`
+      'fontSize': `${size}px`
     }
   }
-  return <i className={`iconfont ${icon} ${textSize}`} style={style} />
+  return <i className={`iconfont ${icon}`} style={style} />
 }

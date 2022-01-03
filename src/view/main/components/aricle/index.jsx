@@ -1,45 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Item } from './Item'
+import './index.less'
+import { getArticleList } from '../../../../services/index'
+import { useRequest } from '@umijs/hooks'
+import { Pagination } from 'antd'
 
-const aricleList = [{
-  id: 12, // 文章Id
-  previewImage: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2806461511,601663066&fm=26&gp=0.jpg', //预览图片
-  title: '测试鼠标',
-  introduction: '前言或者间接',
-  content: 'xadasdasdasdasdasd', // 内容
-  createTime: '2019-01-02', // 创建时间
-  updateTime: '2019-01-02', // 更新时间
-  tags: [], // 标签
-  cate: [], // 分类信息
-}, {
-  id: 12, // 文章Id
-  previewImage: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2806461511,601663066&fm=26&gp=0.jpg', //预览图片
-  title: '测试鼠标',
-  introduction: '前言或者间接',
-  content: 'xadasdasdasdasdasd', // 内容
-  createTime: '2019-01-02', // 创建时间
-  updateTime: '2019-01-02', // 更新时间
-  tags: [], // 标签
-  cate: [], // 分类信息
-}, {
-  id: 12, // 文章Id
-  previewImage: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2806461511,601663066&fm=26&gp=0.jpg', //预览图片
-  title: '测试鼠标',
-  introduction: '前言或者间接',
-  content: 'xadasdasdasdasdasd', // 内容
-  createTime: '2019-01-02', // 创建时间
-  updateTime: '2019-01-02', // 更新时间
-  tags: [], // 标签
-  cate: [], // 分类信息
-}]
 
 export const AricleList = () => {
-  return <div class="w-full pl-0 md:w-5/6 md:pl-10">
-    {aricleList.map((aricle, index) => {
-      return <Item key={index} {...aricle} />
-    })}
-    <div class="page">
+  const [total, setTotal] = useState(0)
+  const [current, setCurrent] = useState(1)
+  const [list, setList] = useState([])
 
+  const { run } = useRequest(async (params) => {
+    return await getArticleList(params)
+  }, {
+    onSuccess: ({ code, data }, params) => {
+      if (code === 0) {
+        setTotal(1000)
+        setList(data.list)
+      }
+    },
+    manual: true
+  })
+
+  useEffect(() => {
+    run({
+      page: 1,
+    })
+  }, [run])
+
+  const onChangePage = (value) => {
+    setCurrent(value)
+    run({
+      page: value
+    })
+  }
+
+  return <div className="aricle-list">
+    <div className="list">
+      {(list || []).map((aricle, index) => {
+        return <Item key={index} {...aricle} />
+      })}
+    </div>
+    <div className="page">
+      <Pagination
+        total={total}
+        defaultCurrent={1}
+        current={current}
+        onChange={onChangePage}
+      />
     </div>
   </div>
 }

@@ -1,21 +1,20 @@
 import React from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom'
-import { createHashHistory } from 'history'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Header }from '../components/headers/index'
 import { Footer } from '../components/footers/index'
 import { Main } from '../view/main/index'
+import { Article } from '../view/article/index'
 
-const history = createHashHistory()
-
-export const RouterConfig = () => {
-  return <HashRouter history={history}>
+export const Routers = () => {
+  return <div className={"container"}>
+  <Router>
     <Header />
     <Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/demo" component={Main} />
-      {/* <Route exact path="/home"  /> */}
-      {/* <Route exact path="/" /> */}
+      <Route exact path="/article/:id" component={Article} />
     </Switch>
     <Footer />
-  </HashRouter>
+  </Router>
+  </div>
 }
